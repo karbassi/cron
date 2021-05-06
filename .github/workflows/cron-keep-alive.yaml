@@ -1,0 +1,19 @@
+name: Keep Alive
+on:
+  schedule:
+    # Every 10 minutes from 6am to 10pm UTC
+    - cron: '*/10 6-22 * * *'
+  push:
+  workflow_dispatch:
+
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the head of the default branch.
+      - uses: actions/checkout@v3
+        with:
+          clean: false
+
+      # Call all URLs in urls.txt
+      - run: bash ./run.sh

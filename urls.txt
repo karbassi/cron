@@ -1,0 +1,2 @@
+https://example.com/some-path/
+https://example.net/diff-path/
